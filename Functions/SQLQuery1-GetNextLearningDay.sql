@@ -1,0 +1,16 @@
+--SQLQuery1-GetNextLearningDay.sql
+
+USE PV_521_Import;
+SET DATEFIRST 1;
+GO
+
+CREATE OR ALTER FUNCTION GetNextLearningDay(@group AS INT, @date as DATE) RETURNS TINYINT
+AS
+BEGIN
+	DECLARE @nextDay	AS TINYINT = DATEPART(WEEKDAY, @date);
+
+
+
+	RETURN @nextDay;
+
+END
